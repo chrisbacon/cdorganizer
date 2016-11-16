@@ -40,6 +40,16 @@ class Album
         return Artist.new(result[0])
     end
 
+    def songs()
+        sql = "
+        SELECT * FROM songs
+        WHERE album_id = #{@id}
+        ;"
+
+        result = SqlRunner.run(sql)
+        return result.map { |hash| Song.new(hash) }
+    end    
+
     def delete()
         sql = "
         DELETE FROM albums
