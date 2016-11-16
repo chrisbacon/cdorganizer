@@ -56,6 +56,16 @@ class Artist
         return result.map{ |hash| Artist.new(hash) }
     end
 
+    def self.find_artist(id)
+        sql = "
+        SELECT * FROM artists
+        WHERE id = #{id}
+        ;"
+
+        result = SqlRunner.run(sql)
+        return Artist.new(result[0])
+    end
+
     def self.delete_all()
         sql = "
         DELETE FROM artists;
