@@ -7,6 +7,7 @@ class Song
     def initialize( options )
         @title = options['title']
         @id = options['id'].to_i if options['id']
+        @album_id = options['album_id'].to_i 
     end
     
     def save()
