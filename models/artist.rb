@@ -22,7 +22,15 @@ class Artist
         @id = result[0]['id'].to_i
     end
 
-    def albums
+    def update()
+        sql = "
+        UPDATE artists
+        SET (name) = ('#{@name}') WHERE id = #{@id};
+        "
+        SqlRunner.run(sql)
+    end
+
+    def albums()
         sql = "
         SELECT * FROM albums
         WHERE artist_id = #{@id}
@@ -32,7 +40,7 @@ class Artist
         return result.map { |hash| Album.new(hash) }
     end
     
-    def self.all
+    def self.all()
         sql = "
         SELECT * FROM artists;
         "
@@ -40,7 +48,7 @@ class Artist
         return result.map{ |hash| Artist.new(hash) }
     end
 
-    def self.delete_all
+    def self.delete_all()
         sql = "
         DELETE FROM artists;
         "

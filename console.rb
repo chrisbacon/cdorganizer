@@ -8,6 +8,12 @@ artist1 = Artist.new({
 
 artist1.save()
 
+artist1.name = 'The artist formerly known as Prince'
+
+artist1.update()
+
+
+
 album1 = Album.new({
     'title' => 'Purple Rain',
     'genre' => 'Rock',
@@ -16,7 +22,9 @@ album1 = Album.new({
 
 album1.save()
 
+album1.title = 'Purple shame'
 
+album1.update()
 
 
 pry.binding
