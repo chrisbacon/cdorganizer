@@ -16,5 +16,6 @@ CREATE TABLE albums (
 
 CREATE TABLE songs (
 	id SERIAL8 primary key,
+    album_id INT8,
 	title VARCHAR(255)
 );

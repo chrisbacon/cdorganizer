@@ -41,6 +41,7 @@ class Artist
     end
 
     def delete()
+        return unless @id
         sql = "
         DELETE FROM artists
         WHERE id = #{@id}

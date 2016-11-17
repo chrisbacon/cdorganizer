@@ -28,9 +28,11 @@ album1.title = 'Purple Rain: The Movie OST'
 album1.update()
 
 song1 = Song.new({
-	'title' => 'Computer Blue'
+	'title' => 'Computer Blue',
 	'album_id' => album1.id
 	})
+
+song1.save()
 
 pry.binding
 nil
