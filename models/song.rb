@@ -13,9 +13,9 @@ class Song
     def save()
         sql = "
         INSERT INTO songs
-        (title)
+        (title, album_id)
         VALUES
-        ('#{@title}')
+        ('#{@title}', #{@album_id})
         returning *
         ;"
 
